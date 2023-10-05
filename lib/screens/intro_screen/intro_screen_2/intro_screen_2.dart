@@ -91,7 +91,7 @@ class IntroScreen2 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
                           AssetRes.introHome2,
-                          height: Get.height * 0.7,
+                          height: Get.height * 0.65,
                           width: Get.width,
                           fit: BoxFit.cover,
                         ),

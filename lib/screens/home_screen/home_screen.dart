@@ -28,7 +28,13 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: Row(
-                children: [Image.asset(AssetRes.location)],
+                children: [
+                  Image.asset(
+                    AssetRes.location,
+                    height: 20,
+                    width: 20,
+                  )
+                ],
               ),
             ),
           ],

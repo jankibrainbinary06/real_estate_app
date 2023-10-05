@@ -64,7 +64,7 @@ class PropertyTypeScreen extends StatelessWidget {
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.75,
+                                    childAspectRatio: 0.71,
                                     crossAxisSpacing: 15,
                                     mainAxisSpacing: 20),
                             itemCount:
@@ -104,7 +104,7 @@ class PropertyTypeScreen extends StatelessWidget {
                                         ),
                                         child: Image.asset(
                                           AssetRes.rentHome,
-                                          height: Get.height * 0.23,
+                                          height: Get.height * 0.22,
                                           width: Get.width * 0.4,
                                           fit: BoxFit.cover,
                                         ),
