@@ -24,4 +24,8 @@ class AssetRes {
   static const introHome3 = '${images}intro_home3.png';
   static const rentHome = '${images}rent_home.png';
   static const buyHome = '${images}buy_home.png';
+  static const bxsBath = '${images}bxs_bath.png';
+  static const carbonWorkspace = '${images}carbon_workspace.png';
+  static const emojioneMonotoneBed = '${images}emojione-monotone_bed.png';
+  static const call = '${images}call.png';
 }

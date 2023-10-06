@@ -29,9 +29,21 @@ class StringRes {
   static const buy = 'Buy';
   static const rent = 'Rent';
 
+  //=====Property detail screen
+  static const skyDandelions = 'Sky Dandelions';
+  static const appartmentAddress = 'Appartment Address';
+  static const favourites = 'Favourites';
+  static const description = 'Description';
+  static const readMore = 'Read More...';
+  static const readLess = 'Read Less';
+  static const estates = 'Estates';
+  static const Lorem = 'Lorem ipsum dolor sit amet consectetur. At et euismod viverra mauris enim at sed. Risus nibh porttitor tellus lobortis sit enim elit.';
+
+
   //===property type screen===
 
   static const whatYou = 'What you’re looking for ?';
+
   static const apartment = 'Apartment';
   static const township = 'Township';
   static const residency = 'Residency';
