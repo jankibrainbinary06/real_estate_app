@@ -14,6 +14,8 @@ class AssetRes {
   static const userFilled = '${icons}user_filled.png';
   static const location = '${icons}location.png';
   static const notification = '${icons}notification.png';
+  static const search = '${icons}Search.png';
+  static const settingMenu = '${icons}setting_menu.png';
 
   //====images=====
 

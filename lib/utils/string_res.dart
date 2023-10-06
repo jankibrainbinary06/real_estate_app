@@ -59,5 +59,9 @@ class StringRes {
 
   static const jakarta = 'Jakarta, Indonesia';
   static const all = 'All';
+  static const for1 = 'For:- ';
+  static const viewAll = 'view all';
+  static const featuredEstate = 'Featured Estates';
+  static const exploreNeatBY = 'Explore Nearby Estates';
   static const searchHouse = 'Search House, Appartmemt etc....';
 }

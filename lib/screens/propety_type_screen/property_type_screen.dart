@@ -7,7 +7,6 @@ import '../../commons/text_style.dart';
 import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
-import '../budget_screen/budget_screen.dart';
 
 class PropertyTypeScreen extends StatelessWidget {
   PropertyTypeScreen({Key? key}) : super(key: key);
@@ -18,6 +17,12 @@ class PropertyTypeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorRes.white,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: CommonButton(
+          onTap: () {
+            propertyTypeController.onTapNext(context);
+          },
+        ),
         body: SafeArea(
             child: GetBuilder<PropertyTypeController>(
           id: 'property',
@@ -129,15 +134,7 @@ class PropertyTypeScreen extends StatelessWidget {
                             },
                           ),
                           SizedBox(
-                            height: Get.height * 0.06,
-                          ),
-                          CommonButton(
-                            onTap: () {
-                              propertyTypeController.onTapNext();
-                            },
-                          ),
-                          SizedBox(
-                            height: Get.height * 0.06,
+                            height: Get.height * 0.14,
                           ),
                         ],
                       ),

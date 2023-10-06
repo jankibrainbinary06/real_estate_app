@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/screens/budget_screen/budget_controller.dart';
 import 'package:real_estate_app/screens/budget_screen/budget_screen.dart';
@@ -25,7 +26,7 @@ class PropertyTypeController extends GetxController {
     update(['property']);
   }
 
-  onTapNext() {
+  onTapNext(BuildContext context) {
     for (int i = 0; i < propertyBoolList.length; i++) {
       if (propertyBoolList[i] == true) {
         isSelected = true;
@@ -35,5 +36,16 @@ class PropertyTypeController extends GetxController {
       }
       update(['property']);
     }
+    if (isSelected == false) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          duration: Duration(seconds: 1),
+          backgroundColor: Colors.red,
+          content: Text(
+            'Please select property type!',
+          ),
+        ),
+      );
+    } else {}
   }
 }

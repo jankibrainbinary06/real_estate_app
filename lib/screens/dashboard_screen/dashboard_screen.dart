@@ -22,7 +22,7 @@ class DashBoardScreen extends StatelessWidget {
             id: 'bottom',
             builder: (controller) {
               if (controller.tab == 0) {
-                return const HomeScreen();
+                return HomeScreen();
               } else if (controller.tab == 1) {
                 return FavouritesScreen();
               } else if (controller.tab == 2) {

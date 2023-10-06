@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/commons/text_style.dart';
@@ -164,7 +166,17 @@ class LookingPropertyScreen extends StatelessWidget {
                     if (lookingPropertyController.isBuy ||
                         lookingPropertyController.isRent) {
                       Get.to(() => PropertyTypeScreen());
-                    } else {}
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          duration: Duration(seconds: 1),
+                          backgroundColor: Colors.red,
+                          content: Text(
+                            'Please select property!',
+                          ),
+                        ),
+                      );
+                    }
                   },
                 ),
               ],
