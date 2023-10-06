@@ -31,6 +31,7 @@ class HomeController extends GetxController {
       featuredBoolList[index] = true;
     }
     update(['home']);
+    update(['favourites']);
   }
 
   onTapNearBY(int index) {

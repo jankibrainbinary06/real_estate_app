@@ -33,3 +33,9 @@ TextStyle lato20700 = const TextStyle(
   fontFamily: FontRes.latoRegular,
   fontWeight: FontWeight.w700,
 );
+TextStyle Mulish13700 = const TextStyle(
+  color: ColorRes.white,
+  fontSize: 13,
+  fontFamily: FontRes.mulishBold,
+  fontWeight: FontWeight.w700,
+);

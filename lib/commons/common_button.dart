@@ -7,11 +7,13 @@ import '../utils/string_res.dart';
 
 class CommonButton extends StatelessWidget {
   final String? title;
+  final String? image;
   final VoidCallback onTap;
   final BorderRadius? borderRadius;
   final Color? color;
   final double? width;
   final double? height;
+  final bool? isShowIcon;
 
   const CommonButton(
       {super.key,
@@ -20,7 +22,7 @@ class CommonButton extends StatelessWidget {
       this.borderRadius,
       this.color,
       this.height,
-      this.width});
+      this.width, this.isShowIcon, this.image,});
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +35,20 @@ class CommonButton extends StatelessWidget {
           color: ColorRes.appColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
-          child: Text(
-            title ?? StringRes.next,
-            style: lato20700,
-          ),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            isShowIcon==true?Image.asset(
+              image ?? "",
+              height: 20,
+              width: 20,
+              fit: BoxFit.fitHeight,
+            ):SizedBox(),
+            SizedBox(width: 7,),
+            Text(
+              title ?? StringRes.next,
+              style: lato20700,
+            ),
+          ],
         ),
       ),
     );

@@ -30,6 +30,16 @@ class AssetRes {
   static const introHome3 = '${images}intro_home3.png';
   static const rentHome = '${images}rent_home.png';
   static const buyHome = '${images}buy_home.png';
+  static const bxsBath = '${images}bxs_bath.png';
+  static const carbonWorkspace = '${images}carbon_workspace.png';
+  static const emojioneMonotoneBed = '${images}emojione-monotone_bed.png';
+  static const call = '${images}call.png';
+  static const horizontalActive = '${images}HorizontalActive.png';
+  static const verticalInactive = '${images}VerticalInactive.png';
+  static const horizontalUnActive = '${images}HorizontalUnActive.png';
+  static const verticalUnInactive = '${images}VerticalUnInactive.png';
+  static const EditSquare = '${images}EditSquare.png';
+  static const User = '${images}User.png';
   static const userLogo = '${images}user_logo.png';
   static const lady = '${images}lady.png';
 }

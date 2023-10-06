@@ -38,6 +38,8 @@ dependencies:
   get: ^4.6.6
   syncfusion_flutter_sliders: ^23.1.39
   syncfusion_flutter_core: ^23.1.39
+  smooth_page_indicator: ^1.1.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -86,4 +88,7 @@ flutter:
     - family: poppin-regular
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Mulish-Bold
+      fonts:
+       - asset: assets/fonts/Mulish-Bold.ttf
 
