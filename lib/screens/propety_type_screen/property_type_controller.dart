@@ -31,12 +31,14 @@ class PropertyTypeController extends GetxController {
       if (propertyBoolList[i] == true) {
         isSelected = true;
         Get.to(() => BudgetScreen());
+        break;
       } else {
         isSelected = false;
       }
       update(['property']);
     }
-    if (isSelected == false) {
+    if (isSelected == true) {
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           duration: Duration(seconds: 1),
@@ -46,6 +48,6 @@ class PropertyTypeController extends GetxController {
           ),
         ),
       );
-    } else {}
+    }
   }
 }

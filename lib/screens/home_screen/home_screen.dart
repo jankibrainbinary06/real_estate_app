@@ -5,6 +5,7 @@ import 'package:real_estate_app/screens/home_screen/home_controller.dart';
 import 'package:real_estate_app/screens/home_screen/widgets/filter_bottomsheet.dart';
 import 'package:real_estate_app/screens/home_screen/widgets/location_bottomsheet.dart';
 import 'package:real_estate_app/screens/notification_screen/notification_screen.dart';
+import 'package:real_estate_app/screens/property_datails_screen/property_datails_screen.dart';
 import 'package:real_estate_app/utils/color_res.dart';
 import 'package:real_estate_app/utils/string_res.dart';
 
@@ -303,221 +304,231 @@ class HomeScreen extends StatelessWidget {
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return Stack(
-                                alignment: Alignment.bottomRight,
-                                children: [
-                                  Container(
-                                    width: Get.width * 0.9,
-                                    margin: const EdgeInsets.only(bottom: 10),
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          10,
-                                        ),
-                                        color: ColorRes.colorF6F6F6,
-                                        border: Border.all(
-                                          color: ColorRes.colorBDBFCE,
-                                          width: 1,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: ColorRes.black.withOpacity(
-                                                0.15,
-                                              ),
-                                              blurRadius: 3,
-                                              spreadRadius: -1,
-                                              offset: const Offset(4, 4)),
-                                        ]),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(8),
-                                          height: Get.height * 0.22,
-                                          width: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              border: Border.all(
-                                                  color: ColorRes.appColor,
-                                                  width: 1),
-                                              image: const DecorationImage(
-                                                image: AssetImage(
-                                                  AssetRes.introHome1,
-                                                ),
-                                                fit: BoxFit.cover,
-                                              )),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              GestureDetector(
-                                                child: Container(
-                                                  height: 25,
-                                                  width: 25,
-                                                  decoration:
-                                                      const BoxDecoration(
-                                                    color: ColorRes.white,
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: homeController
-                                                              .featuredBoolList[
-                                                          index]
-                                                      ? Image.asset(
-                                                          AssetRes.heartFilled,
-                                                          color: Colors.red,
-                                                          scale: 5.5,
-                                                        )
-                                                      : Image.asset(
-                                                          AssetRes.heart,
-                                                          color: Colors.red,
-                                                          scale: 5.5,
-                                                        ),
-                                                ),
-                                                onTap: () {
-                                                  homeController
-                                                      .onTapFeatured(index);
-                                                },
-                                              ),
-                                              const Spacer(),
-                                              Container(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 10,
-                                                        vertical: 6),
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                    8,
-                                                  ),
-                                                  color: ColorRes.colorF6F6F6,
-                                                  border: Border.all(
-                                                    color: ColorRes.colorECEDF3,
-                                                    width: 1,
-                                                  ),
-                                                ),
-                                                child: Text(
-                                                  StringRes.apartment,
-                                                  style: lato20700.copyWith(
-                                                      color: ColorRes.appColor,
-                                                      fontSize: 10),
-                                                ),
-                                              ),
-                                            ],
+                              return GestureDetector(
+                                onTap: () {
+                                  Get.to(() => PropertyDetailsScreen());
+                                },
+                                child: Stack(
+                                  alignment: Alignment.bottomRight,
+                                  children: [
+                                    Container(
+                                      width: Get.width * 0.9,
+                                      margin: const EdgeInsets.only(bottom: 10),
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          width: 12,
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 15),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                width: Get.width * 0.4,
-                                                child: Text(
-                                                  'Sky Dandelions Apartment',
-                                                  style: lato14400.copyWith(
-                                                      color:
-                                                          ColorRes.color252B5C,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                      fontSize: 13),
+                                          color: ColorRes.colorF6F6F6,
+                                          border: Border.all(
+                                            color: ColorRes.colorBDBFCE,
+                                            width: 1,
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color:
+                                                    ColorRes.black.withOpacity(
+                                                  0.15,
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                height: 3,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  const Icon(
-                                                    Icons.star_sharp,
-                                                    color: ColorRes.colorFFC42D,
-                                                    size: 20,
+                                                blurRadius: 3,
+                                                spreadRadius: -1,
+                                                offset: const Offset(4, 4)),
+                                          ]),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(8),
+                                            height: Get.height * 0.22,
+                                            width: Get.height * 0.2,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                border: Border.all(
+                                                    color: ColorRes.appColor,
+                                                    width: 1),
+                                                image: const DecorationImage(
+                                                  image: AssetImage(
+                                                    AssetRes.introHome1,
                                                   ),
-                                                  Text(
-                                                    '4.9',
-                                                    style: lato14400.copyWith(
-                                                        fontSize: 12,
-                                                        color: ColorRes
-                                                            .color6D718B,
-                                                        fontWeight:
-                                                            FontWeight.w600),
+                                                  fit: BoxFit.cover,
+                                                )),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                GestureDetector(
+                                                  child: Container(
+                                                    height: 25,
+                                                    width: 25,
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: ColorRes.white,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                    child: homeController
+                                                                .featuredBoolList[
+                                                            index]
+                                                        ? Image.asset(
+                                                            AssetRes
+                                                                .heartFilled,
+                                                            color: Colors.red,
+                                                            scale: 5.5,
+                                                          )
+                                                        : Image.asset(
+                                                            AssetRes.heart,
+                                                            color: Colors.red,
+                                                            scale: 5.5,
+                                                          ),
                                                   ),
-                                                ],
-                                              ),
-                                              const SizedBox(
-                                                height: 3,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetRes.location,
-                                                    height: 15,
-                                                    width: 15,
+                                                  onTap: () {
+                                                    homeController
+                                                        .onTapFeatured(index);
+                                                  },
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 6),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                      8,
+                                                    ),
+                                                    color: ColorRes.colorF6F6F6,
+                                                    border: Border.all(
+                                                      color:
+                                                          ColorRes.colorECEDF3,
+                                                      width: 1,
+                                                    ),
                                                   ),
-                                                  Text(
-                                                    StringRes.jakarta,
-                                                    style: mont16400.copyWith(
-                                                        fontSize: 12,
-                                                        color: ColorRes
-                                                            .color6D718B),
-                                                  ),
-                                                ],
-                                              ),
-                                              const SizedBox(
-                                                height: 2,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text(
-                                                    '\$ 290',
-                                                    style: mont16400.copyWith(
+                                                  child: Text(
+                                                    StringRes.apartment,
+                                                    style: lato20700.copyWith(
                                                         color:
                                                             ColorRes.appColor,
+                                                        fontSize: 10),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 12,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 15),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                  width: Get.width * 0.4,
+                                                  child: Text(
+                                                    'Sky Dandelions Apartment',
+                                                    style: lato14400.copyWith(
+                                                        color: ColorRes
+                                                            .color252B5C,
                                                         fontWeight:
                                                             FontWeight.w700,
-                                                        fontSize: 14),
+                                                        fontSize: 13),
                                                   ),
-                                                  Text(
-                                                    '/month',
-                                                    style: mont16400.copyWith(
-                                                        color:
-                                                            ColorRes.appColor,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 9),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 10,
-                                    child: Container(
-                                      padding: const EdgeInsets.all(6),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          color: ColorRes.color3F467C
-                                              .withOpacity(0.69)),
-                                      child: Text(
-                                        StringRes.for1 + StringRes.rent,
-                                        style: lato14400.copyWith(
-                                            fontWeight: FontWeight.w600,
-                                            color: ColorRes.white),
+                                                ),
+                                                const SizedBox(
+                                                  height: 3,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.star_sharp,
+                                                      color:
+                                                          ColorRes.colorFFC42D,
+                                                      size: 20,
+                                                    ),
+                                                    Text(
+                                                      '4.9',
+                                                      style: lato14400.copyWith(
+                                                          fontSize: 12,
+                                                          color: ColorRes
+                                                              .color6D718B,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                  ],
+                                                ),
+                                                const SizedBox(
+                                                  height: 3,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Image.asset(
+                                                      AssetRes.location,
+                                                      height: 15,
+                                                      width: 15,
+                                                    ),
+                                                    Text(
+                                                      StringRes.jakarta,
+                                                      style: mont16400.copyWith(
+                                                          fontSize: 12,
+                                                          color: ColorRes
+                                                              .color6D718B),
+                                                    ),
+                                                  ],
+                                                ),
+                                                const SizedBox(
+                                                  height: 2,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      '\$ 290',
+                                                      style: mont16400.copyWith(
+                                                          color:
+                                                              ColorRes.appColor,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize: 14),
+                                                    ),
+                                                    Text(
+                                                      '/month',
+                                                      style: mont16400.copyWith(
+                                                          color:
+                                                              ColorRes.appColor,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontSize: 9),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    Positioned(
+                                      bottom: 10,
+                                      child: Container(
+                                        padding: const EdgeInsets.all(6),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: ColorRes.color3F467C
+                                                .withOpacity(0.69)),
+                                        child: Text(
+                                          StringRes.for1 + StringRes.rent,
+                                          style: lato14400.copyWith(
+                                              fontWeight: FontWeight.w600,
+                                              color: ColorRes.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               );
                             },
                             separatorBuilder: (context, index) {

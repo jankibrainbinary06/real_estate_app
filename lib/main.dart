@@ -8,7 +8,7 @@ void main() {
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // status bar color
-      statusBarIconBrightness: Brightness.dark));
+      statusBarIconBrightness: Brightness.light));
 }
 
 class MyApp extends StatelessWidget {

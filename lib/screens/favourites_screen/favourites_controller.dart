@@ -1,10 +1,8 @@
 import 'package:get/get.dart';
 
-
 class FavouritesController extends GetxController {
-  bool isVertical = false;
+  bool isVertical = true;
   bool isHorizontal = false;
-
 
   @override
   void onInit() {
