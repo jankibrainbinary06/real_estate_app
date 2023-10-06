@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:real_estate_app/screens/dashboard_screen/dashboard_screen.dart';
 import 'package:real_estate_app/screens/pre_splash_screen/pre_splash_screen.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: PreSplashScreen(),
+      home: DashBoardScreen(),
     );
   }
 }
