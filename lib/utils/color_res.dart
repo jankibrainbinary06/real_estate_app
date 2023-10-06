@@ -15,4 +15,5 @@ class ColorRes {
   static const colorFFC42D = Color(0xffFFC42D);
   static const colorBDBFCE = Color(0xffBDBFCE);
   static const color3F467C = Color(0xff3F467C);
+  static const color53587A = Color(0xff53587A);
 }

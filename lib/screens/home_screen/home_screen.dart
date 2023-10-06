@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/commons/text_style.dart';
 import 'package:real_estate_app/screens/home_screen/home_controller.dart';
+import 'package:real_estate_app/screens/home_screen/widgets/filter_bottomsheet.dart';
+import 'package:real_estate_app/screens/home_screen/widgets/location_bottomsheet.dart';
+import 'package:real_estate_app/screens/notification_screen/notification_screen.dart';
 import 'package:real_estate_app/utils/color_res.dart';
 import 'package:real_estate_app/utils/string_res.dart';
 
@@ -29,8 +32,8 @@ class HomeScreen extends StatelessWidget {
                           height: Get.height * 0.3,
                           width: Get.width,
                           color: Colors.transparent,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
                               horizontal: 20,
                             ),
                           ),
@@ -55,57 +58,67 @@ class HomeScreen extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
-                                      height: 50,
-                                      width: Get.width * 0.45,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            10,
-                                          ),
-                                          color: ColorRes.white,
-                                          border: Border.all(
-                                            color: ColorRes.colorECEDF3,
-                                            width: 1,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color:
-                                                    ColorRes.black.withOpacity(
-                                                  0.15,
-                                                ),
-                                                blurRadius: 3,
-                                                spreadRadius: -2,
-                                                offset: Offset(3, 3)),
-                                          ]),
-                                      alignment: Alignment.center,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            AssetRes.location,
-                                            height: 20,
-                                            width: 20,
-                                          ),
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          Text(
-                                            StringRes.jakarta,
-                                            style: lato25500.copyWith(
-                                                color: ColorRes.appColor,
-                                                fontSize: 13),
-                                          ),
-                                        ],
+                                    GestureDetector(
+                                      child: Container(
+                                        height: 50,
+                                        width: Get.width * 0.45,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                            color: ColorRes.white,
+                                            border: Border.all(
+                                              color: ColorRes.colorECEDF3,
+                                              width: 1,
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  color: ColorRes.black
+                                                      .withOpacity(
+                                                    0.15,
+                                                  ),
+                                                  blurRadius: 3,
+                                                  spreadRadius: -2,
+                                                  offset: const Offset(3, 3)),
+                                            ]),
+                                        alignment: Alignment.center,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              AssetRes.location,
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                            const SizedBox(
+                                              width: 5,
+                                            ),
+                                            Text(
+                                              StringRes.jakarta,
+                                              style: lato25500.copyWith(
+                                                  color: ColorRes.appColor,
+                                                  fontSize: 13),
+                                            ),
+                                          ],
+                                        ),
                                       ),
+                                      onTap: () {
+                                        showLocationBottomSheet(context);
+                                      },
                                     ),
-                                    Spacer(),
-                                    Image.asset(
-                                      AssetRes.notification,
-                                      height: 26,
-                                      width: 26,
-                                      scale: 4,
-                                      fit: BoxFit.fill,
+                                    const Spacer(),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Get.to(() => NotificationScreen());
+                                      },
+                                      child: Image.asset(
+                                        AssetRes.notification,
+                                        height: 26,
+                                        width: 26,
+                                        scale: 4,
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -139,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                                   ]),
                               child: Row(
                                 children: [
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Image.asset(
                                     AssetRes.search,
                                     height: 25,
@@ -147,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                                     fit: BoxFit.contain,
                                     scale: 4,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Expanded(
                                     child: TextField(
                                       controller:
@@ -165,31 +178,36 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Container(
-                            height: 54,
-                            width: Get.width * 0.13,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  10,
-                                ),
-                                color: ColorRes.colorF6F6F6,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: ColorRes.black.withOpacity(
-                                        0.15,
-                                      ),
-                                      blurRadius: 3,
-                                      spreadRadius: -2,
-                                      offset: const Offset(3, 3)),
-                                ]),
-                            child: Image.asset(
-                              AssetRes.settingMenu,
-                              height: 28,
-                              width: 28,
-                              scale: 4,
+                          GestureDetector(
+                            onTap: () {
+                              showFilterBottomSheet(context);
+                            },
+                            child: Container(
+                              height: 54,
+                              width: Get.width * 0.13,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                    10,
+                                  ),
+                                  color: ColorRes.colorF6F6F6,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: ColorRes.black.withOpacity(
+                                          0.15,
+                                        ),
+                                        blurRadius: 3,
+                                        spreadRadius: -2,
+                                        offset: const Offset(3, 3)),
+                                  ]),
+                              child: Image.asset(
+                                AssetRes.settingMenu,
+                                height: 28,
+                                width: 28,
+                                scale: 4,
+                              ),
                             ),
                           ),
                         ],
@@ -199,7 +217,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         SizedBox(
@@ -209,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                           height: 62,
                           child: ListView.separated(
                             separatorBuilder: (context, index) {
-                              return SizedBox(
+                              return const SizedBox(
                                 width: 20,
                               );
                             },
@@ -242,7 +260,7 @@ class HomeScreen extends StatelessWidget {
                                             ),
                                             blurRadius: 3,
                                             spreadRadius: -2,
-                                            offset: Offset(3, 3)),
+                                            offset: const Offset(3, 3)),
                                       ]),
                                   child: Text(
                                     StringRes.apartment,
@@ -291,7 +309,7 @@ class HomeScreen extends StatelessWidget {
                                   Container(
                                     width: Get.width * 0.9,
                                     margin: const EdgeInsets.only(bottom: 10),
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
                                           10,
@@ -308,12 +326,12 @@ class HomeScreen extends StatelessWidget {
                                               ),
                                               blurRadius: 3,
                                               spreadRadius: -1,
-                                              offset: Offset(4, 4)),
+                                              offset: const Offset(4, 4)),
                                         ]),
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.all(8),
+                                          padding: const EdgeInsets.all(8),
                                           height: Get.height * 0.22,
                                           width: Get.height * 0.2,
                                           decoration: BoxDecoration(
@@ -322,7 +340,7 @@ class HomeScreen extends StatelessWidget {
                                               border: Border.all(
                                                   color: ColorRes.appColor,
                                                   width: 1),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                 image: AssetImage(
                                                   AssetRes.introHome1,
                                                 ),
@@ -336,7 +354,8 @@ class HomeScreen extends StatelessWidget {
                                                 child: Container(
                                                   height: 25,
                                                   width: 25,
-                                                  decoration: BoxDecoration(
+                                                  decoration:
+                                                      const BoxDecoration(
                                                     color: ColorRes.white,
                                                     shape: BoxShape.circle,
                                                   ),
@@ -359,7 +378,7 @@ class HomeScreen extends StatelessWidget {
                                                       .onTapFeatured(index);
                                                 },
                                               ),
-                                              Spacer(),
+                                              const Spacer(),
                                               Container(
                                                 padding:
                                                     const EdgeInsets.symmetric(
@@ -386,7 +405,7 @@ class HomeScreen extends StatelessWidget {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 12,
                                         ),
                                         Padding(
@@ -406,15 +425,16 @@ class HomeScreen extends StatelessWidget {
                                                       color:
                                                           ColorRes.color252B5C,
                                                       fontWeight:
-                                                          FontWeight.w700),
+                                                          FontWeight.w700,
+                                                      fontSize: 13),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height: 5,
+                                              const SizedBox(
+                                                height: 3,
                                               ),
                                               Row(
                                                 children: [
-                                                  Icon(
+                                                  const Icon(
                                                     Icons.star_sharp,
                                                     color: ColorRes.colorFFC42D,
                                                     size: 20,
@@ -430,8 +450,8 @@ class HomeScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                                              SizedBox(
-                                                height: 5,
+                                              const SizedBox(
+                                                height: 3,
                                               ),
                                               Row(
                                                 children: [
@@ -449,18 +469,19 @@ class HomeScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                                              SizedBox(
-                                                height: 5,
+                                              const SizedBox(
+                                                height: 2,
                                               ),
                                               Row(
                                                 children: [
                                                   Text(
                                                     '\$ 290',
                                                     style: mont16400.copyWith(
-                                                      color: ColorRes.appColor,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                    ),
+                                                        color:
+                                                            ColorRes.appColor,
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                        fontSize: 14),
                                                   ),
                                                   Text(
                                                     '/month',
@@ -482,7 +503,7 @@ class HomeScreen extends StatelessWidget {
                                   Positioned(
                                     bottom: 10,
                                     child: Container(
-                                      padding: EdgeInsets.all(6),
+                                      padding: const EdgeInsets.all(6),
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -500,7 +521,7 @@ class HomeScreen extends StatelessWidget {
                               );
                             },
                             separatorBuilder: (context, index) {
-                              return SizedBox(
+                              return const SizedBox(
                                 width: 20,
                               );
                             },
@@ -527,7 +548,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         GridView.builder(
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return Container(
@@ -550,23 +571,24 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                         blurRadius: 3,
                                         spreadRadius: -1,
-                                        offset: Offset(4, 4)),
+                                        offset: const Offset(4, 4)),
                                   ]),
                               child: Column(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   Container(
-                                    margin: EdgeInsets.symmetric(horizontal: 8),
-                                    padding: EdgeInsets.all(8),
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 8),
+                                    padding: const EdgeInsets.all(8),
                                     height: Get.height * 0.24,
                                     width: Get.height * 0.24,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(
                                             color: ColorRes.appColor, width: 1),
-                                        image: DecorationImage(
+                                        image: const DecorationImage(
                                           image: AssetImage(
                                             AssetRes.introHome2,
                                           ),
@@ -580,7 +602,7 @@ class HomeScreen extends StatelessWidget {
                                           child: Container(
                                             height: 25,
                                             width: 25,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               color: ColorRes.white,
                                               shape: BoxShape.circle,
                                             ),
@@ -601,7 +623,7 @@ class HomeScreen extends StatelessWidget {
                                             homeController.onTapNearBY(index);
                                           },
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
@@ -652,7 +674,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 8,
                                       ),
                                       SizedBox(
@@ -665,9 +687,9 @@ class HomeScreen extends StatelessWidget {
                                               fontSize: 13),
                                         ),
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                       Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: const EdgeInsets.all(3),
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(2),
@@ -683,15 +705,15 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Row(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
-                                      Icon(
+                                      const Icon(
                                         Icons.star_sharp,
                                         color: ColorRes.colorFFC42D,
                                         size: 15,
@@ -703,7 +725,7 @@ class HomeScreen extends StatelessWidget {
                                             color: ColorRes.color6D718B,
                                             fontWeight: FontWeight.w600),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       Image.asset(
@@ -711,7 +733,7 @@ class HomeScreen extends StatelessWidget {
                                         height: 10,
                                         width: 10,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 2,
                                       ),
                                       Text(
@@ -722,7 +744,7 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],
@@ -731,10 +753,10 @@ class HomeScreen extends StatelessWidget {
                           },
                           itemCount: 4,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 15,
-                                  childAspectRatio: 0.6,
+                                  childAspectRatio: 0.59,
                                   mainAxisSpacing: 15),
                         ),
                       ],

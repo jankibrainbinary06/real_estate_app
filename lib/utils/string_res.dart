@@ -47,9 +47,29 @@ class StringRes {
 
   static const jakarta = 'Jakarta, Indonesia';
   static const all = 'All';
+  static const edit = 'Edit';
   static const for1 = 'For:- ';
   static const viewAll = 'view all';
+  static const selectLocation = 'Select Location';
   static const featuredEstate = 'Featured Estates';
   static const exploreNeatBY = 'Explore Nearby Estates';
   static const searchHouse = 'Search House, Appartmemt etc....';
+  static const petompon =
+      'Petompon, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232';
+
+  static const filter = 'Filter';
+  static const category = 'Category';
+  static const priceRange = 'Price Range';
+  static const facilities = 'Facilities';
+  static const apply = 'Apply';
+  static const rating = 'Ratings';
+  static const reset = 'Reset';
+
+  //=== notification screen===
+
+  static const notification = 'Notification';
+  static const justMessaged = 'Just messaged you. Check the message';
+
+  ///===messages screen===
+  static const messages = 'Message';
 }

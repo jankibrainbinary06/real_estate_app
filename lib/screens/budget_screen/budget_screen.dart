@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/commons/common_button.dart';
 import 'package:real_estate_app/screens/budget_screen/budget_controller.dart';
+import 'package:syncfusion_flutter_core/theme.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 import '../../commons/text_style.dart';
+import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
 import '../dashboard_screen/dashboard_screen.dart';
@@ -78,19 +81,26 @@ class BudgetScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                RangeSlider(
-                  activeColor: ColorRes.appColor,
-                  values:
-                      RangeValues(budgetController.start, budgetController.end),
-                  labels: RangeLabels(budgetController.start.toString(),
-                      budgetController.end.toString()),
-                  onChanged: (value) {
-                    budgetController.start = value.start;
-                    budgetController.end = value.end;
-                    budgetController.update(['budget']);
-                  },
-                  min: 0.0,
-                  max: 50.0,
+                SfRangeSliderTheme(
+                  data: SfRangeSliderThemeData(
+                    tooltipTextStyle:
+                        lato14400.copyWith(fontSize: 12, color: ColorRes.white),
+                    tooltipBackgroundColor: ColorRes.appColor,
+                  ),
+                  child: SfRangeSlider(
+                    endThumbIcon: Image.asset(AssetRes.blurThumb),
+                    startThumbIcon: Image.asset(AssetRes.blurThumb),
+                    activeColor: ColorRes.appColor,
+                    values: SfRangeValues(
+                        budgetController.start, budgetController.end),
+                    onChanged: (value) {
+                      budgetController.start = value.start;
+                      budgetController.end = value.end;
+                      budgetController.update(['budget']);
+                    },
+                    min: 0.0,
+                    max: 50.0,
+                  ),
                 ),
                 SizedBox(
                   height: Get.height * 0.09,
