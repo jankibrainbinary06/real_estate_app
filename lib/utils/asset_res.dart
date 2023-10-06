@@ -30,4 +30,10 @@ class AssetRes {
   static const carbonWorkspace = '${images}carbon_workspace.png';
   static const emojioneMonotoneBed = '${images}emojione-monotone_bed.png';
   static const call = '${images}call.png';
+  static const horizontalActive = '${images}HorizontalActive.png';
+  static const verticalInactive = '${images}VerticalInactive.png';
+  static const horizontalUnActive = '${images}HorizontalUnActive.png';
+  static const verticalUnInactive = '${images}VerticalUnInactive.png';
+  static const EditSquare = '${images}EditSquare.png';
+  static const User = '${images}User.png';
 }

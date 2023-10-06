@@ -39,6 +39,10 @@ class StringRes {
   static const estates = 'Estates';
   static const Lorem = 'Lorem ipsum dolor sit amet consectetur. At et euismod viverra mauris enim at sed. Risus nibh porttitor tellus lobortis sit enim elit.';
 
+    //=== Reviews screen=====
+  static const reviews = 'Reviews';
+  static const addReview = 'Add Review';
+  static const typeYourName = 'Type your name';
 
   //===property type screen===
 

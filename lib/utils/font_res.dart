@@ -4,4 +4,5 @@ class FontRes {
   static const latoBlack = 'lato-black';
 
   static const montserratLight = 'montserrat-light';
+  static const mulishBold = 'Mulish-Bold';
 }

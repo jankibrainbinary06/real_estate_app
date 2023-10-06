@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.6
   smooth_page_indicator: ^1.1.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -85,4 +86,7 @@ flutter:
     - family: poppin-regular
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Mulish-Bold
+      fonts:
+       - asset: assets/fonts/Mulish-Bold.ttf
 
