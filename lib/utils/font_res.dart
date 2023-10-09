@@ -5,4 +5,6 @@ class FontRes {
 
   static const montserratLight = 'montserrat-light';
   static const mulishBold = 'Mulish-Bold';
+
+  static const openSansSemiBold = 'open-sans-semibold';
 }

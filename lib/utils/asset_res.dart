@@ -20,6 +20,19 @@ class AssetRes {
   static const thumbIcon = '${icons}thumb_color.png';
   static const settingMenu = '${icons}setting_menu.png';
   static const blurThumb = '${icons}blur_thumb.png';
+  static const check = '${icons}check.png';
+  static const mic = '${icons}mic.png';
+  static const smily = '${icons}smily.png';
+  static const camero = '${icons}camero.png';
+  static const edit = '${icons}edit.png';
+  static const email = '${icons}email.png';
+  static const attachFile = '${icons}attach_file.png';
+  static const logout = '${icons}logout.png';
+  static const setting = '${icons}setting.png';
+  static const arrowNext = '${icons}arrow_next.png';
+  static const forgetPass = '${icons}forget_pass.png';
+  static const eyeClose = '${icons}eye_close.png';
+  static const notification2 = '${icons}notification_2.png';
 
   //====images====
 
@@ -42,4 +55,5 @@ class AssetRes {
   static const User = '${images}User.png';
   static const userLogo = '${images}user_logo.png';
   static const lady = '${images}lady.png';
+  static const image3 = '${images}3.png';
 }

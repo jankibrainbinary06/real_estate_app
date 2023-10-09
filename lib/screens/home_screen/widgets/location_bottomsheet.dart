@@ -147,7 +147,9 @@ showLocationBottomSheet(BuildContext context) {
                             height: Get.height * 0.025,
                           ),
                           CommonButton(
-                            onTap: () {},
+                            onTap: () {
+                              Get.back();
+                            },
                           ),
                         ],
                       ),

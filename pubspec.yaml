@@ -40,6 +40,11 @@ dependencies:
   syncfusion_flutter_core: ^23.1.39
   smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
+  image_picker:
+  file_picker: ^5.5.0
+  emoji_picker_flutter: ^1.6.2
+
+
 
 dev_dependencies:
   flutter_test:
@@ -91,4 +96,7 @@ flutter:
     - family: Mulish-Bold
       fonts:
        - asset: assets/fonts/Mulish-Bold.ttf
+    - family: open-sans-semibold
+      fonts:
+        - asset: assets/fonts/OpenSans_Condensed-SemiBold.ttf
 

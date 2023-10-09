@@ -6,6 +6,7 @@ import 'package:real_estate_app/screens/favourites_screen/favourites_screen.dart
 import 'package:real_estate_app/screens/home_screen/home_screen.dart';
 import 'package:real_estate_app/screens/intro_screen/intro_screen_1/intro_screen1.dart';
 import 'package:real_estate_app/screens/messages_screen/messages_screen.dart';
+import 'package:real_estate_app/screens/profile_screen/profile_screen.dart';
 import 'package:real_estate_app/screens/reviews_screen/reviews_screen.dart';
 
 class DashBoardScreen extends StatelessWidget {
@@ -30,7 +31,7 @@ class DashBoardScreen extends StatelessWidget {
               } else if (controller.tab == 2) {
                 return MessagesScreen();
               } else if (controller.tab == 3) {
-                return ReviewsScreen();
+                return ProfileScreen();
               } else {
                 return IntroScreen1();
               }

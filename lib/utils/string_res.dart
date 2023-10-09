@@ -37,9 +37,10 @@ class StringRes {
   static const readMore = 'Read More...';
   static const readLess = 'Read Less';
   static const estates = 'Estates';
-  static const Lorem = 'Lorem ipsum dolor sit amet consectetur. At et euismod viverra mauris enim at sed. Risus nibh porttitor tellus lobortis sit enim elit.';
+  static const Lorem =
+      'Lorem ipsum dolor sit amet consectetur. At et euismod viverra mauris enim at sed. Risus nibh porttitor tellus lobortis sit enim elit.';
 
-    //=== Reviews screen=====
+  //=== Reviews screen=====
   static const reviews = 'Reviews';
   static const addReview = 'Add Review';
   static const typeYourName = 'Type your name';
@@ -88,4 +89,28 @@ class StringRes {
 
   ///===messages screen===
   static const messages = 'Message';
+  static const today = 'Today';
+  static const typeAMessage = 'Type a message';
+
+  ///===profile screen===
+  static const profile = 'Profile';
+  static const setting = 'Settings';
+  static const yes = 'yes';
+  static const no = 'no';
+  static const signOut = 'Sign Out';
+  static const areYou = 'Are you sure you want to Sign out';
+
+  //===setting screen==
+  static const pushNotification = 'Push Notifications';
+  static const forgetPassword = 'Forgot Password';
+
+  ///=== login screen===
+  static const enterEmail = 'Enter Email ID';
+  static const enterPass = 'Enter Password';
+  static const helloAgain = 'Hello Again! Welcome back';
+  static const signIn = 'Sign In';
+  static const lets = 'Let’s';
+  static const forgetPass = 'Forgot Password ?';
+  static const doNntHaveAnAccount = 'Don’t have an account?';
+  static const signUp = ' Sign Up';
 }

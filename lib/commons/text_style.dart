@@ -39,3 +39,9 @@ TextStyle Mulish13700 = const TextStyle(
   fontFamily: FontRes.mulishBold,
   fontWeight: FontWeight.w700,
 );
+TextStyle openSans14600 = TextStyle(
+  color: ColorRes.black.withOpacity(0.5),
+  fontSize: 14,
+  fontFamily: FontRes.openSansSemiBold,
+  fontWeight: FontWeight.w600,
+);
