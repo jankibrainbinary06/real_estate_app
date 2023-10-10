@@ -78,9 +78,12 @@ class ResetPassScreen extends StatelessWidget {
                       },
                     ),
                     resetPassController.passError != ''
-                        ? Text(
-                            resetPassController.passError,
-                            style: const TextStyle(color: Colors.red),
+                        ? Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              resetPassController.passError,
+                              style: const TextStyle(color: Colors.red),
+                            ),
                           )
                         : const SizedBox(),
                     const SizedBox(
@@ -103,9 +106,12 @@ class ResetPassScreen extends StatelessWidget {
                       },
                     ),
                     resetPassController.confirmPassError != ''
-                        ? Text(
-                            resetPassController.confirmPassError,
-                            style: const TextStyle(color: Colors.red),
+                        ? Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              resetPassController.confirmPassError,
+                              style: const TextStyle(color: Colors.red),
+                            ),
                           )
                         : const SizedBox(),
                     SizedBox(

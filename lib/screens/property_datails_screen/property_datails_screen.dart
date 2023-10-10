@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:real_estate_app/commons/common_button.dart';
 import 'package:real_estate_app/commons/text_style.dart';
 import 'package:real_estate_app/screens/property_datails_screen/property_datails_controller.dart';
+import 'package:real_estate_app/screens/reviews_screen/reviews_screen.dart';
 import 'package:real_estate_app/utils/color_res.dart';
 import 'package:real_estate_app/utils/string_res.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -210,21 +211,26 @@ class PropertyDetailsScreen extends StatelessWidget {
                                           fontSize: 10),
                                     ),
                                   ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.yellow.shade700,
-                                        size: 18,
-                                      ),
-                                      Text(
-                                        "4.8(1,275 Reviews)",
-                                        style: lato20700.copyWith(
-                                            fontWeight: FontWeight.w600,
-                                            color: ColorRes.color53587A,
-                                            fontSize: 12),
-                                      ),
-                                    ],
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => ReviewsScreen());
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow.shade700,
+                                          size: 18,
+                                        ),
+                                        Text(
+                                          "4.8(1,275 Reviews)",
+                                          style: lato20700.copyWith(
+                                              fontWeight: FontWeight.w600,
+                                              color: ColorRes.color53587A,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   RichText(
                                     text: TextSpan(

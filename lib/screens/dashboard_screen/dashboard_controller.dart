@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:real_estate_app/commons/text_style.dart';
+import 'package:real_estate_app/utils/color_res.dart';
 
 class DashBoardController extends GetxController {
   int tab = 0;
@@ -30,16 +32,20 @@ class DashBoardController extends GetxController {
     return (await showCupertinoDialog(
           context: context,
           builder: (context) => AlertDialog(
+            backgroundColor: ColorRes.white,
             title: const Text('Are you sure?'),
-            content: const Text('Do you want to Log out ?'),
+            content: const Text('Do you want to exit the app?'),
             actions: [
               TextButton(
                 onPressed: () => Get.back(result: false),
-                child: const Text('No'),
+                child: Text('No', style: poppins14400),
               ),
               TextButton(
                 onPressed: () => exit(0),
-                child: const Text('Yes'),
+                child: Text(
+                  'Yes',
+                  style: poppins14400,
+                ),
               ),
             ],
           ),

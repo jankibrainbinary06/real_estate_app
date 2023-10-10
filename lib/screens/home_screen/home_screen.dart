@@ -764,10 +764,11 @@ class HomeScreen extends StatelessWidget {
                           },
                           itemCount: 4,
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                              SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 15,
-                                  childAspectRatio: 0.59,
+                                  childAspectRatio:
+                                      Get.height > 650 ? 0.59 : 0.64,
                                   mainAxisSpacing: 15),
                         ),
                       ],

@@ -38,15 +38,11 @@ class PropertyTypeController extends GetxController {
     }
     if (isSelected == true) {
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          duration: Duration(seconds: 1),
+      Get.snackbar('Error', 'Please select property type!',
+          colorText: Colors.white,
           backgroundColor: Colors.red,
-          content: Text(
-            'Please select property type!',
-          ),
-        ),
-      );
+          duration: const Duration(seconds: 1),
+          snackPosition: SnackPosition.BOTTOM);
     }
   }
 }

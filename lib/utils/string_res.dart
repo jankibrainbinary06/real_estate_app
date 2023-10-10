@@ -44,8 +44,9 @@ class StringRes {
 
   //=== Reviews screen=====
   static const reviews = 'Reviews';
-  static const addReview = 'Add Review';
+  static const addReview = 'Add Reviews';
   static const typeYourName = 'Type your name';
+  static const describe = 'Describe your experience?';
 
   //===property type screen===
 

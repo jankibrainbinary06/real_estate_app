@@ -14,6 +14,7 @@ showLocationBottomSheet(BuildContext context) {
   final HomeController homeController = Get.put(HomeController());
 
   return showModalBottomSheet(
+    barrierColor: ColorRes.black.withOpacity(0.69),
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     context: context,

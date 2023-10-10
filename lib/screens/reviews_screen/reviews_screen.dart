@@ -98,7 +98,7 @@ class ReviewsScreen extends StatelessWidget {
                         },
                         child: Container(
                           height: 40,
-                          width: 115,
+                          width: 130,
                           decoration: BoxDecoration(
                               color: ColorRes.appColor,
                               borderRadius: BorderRadius.circular(5)),

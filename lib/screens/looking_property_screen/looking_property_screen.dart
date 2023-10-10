@@ -165,15 +165,11 @@ class LookingPropertyScreen extends StatelessWidget {
                         lookingPropertyController.isRent) {
                       Get.to(() => PropertyTypeScreen());
                     } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          duration: Duration(seconds: 1),
+                      Get.snackbar('Error', 'Please select property type!',
+                          colorText: Colors.white,
                           backgroundColor: Colors.red,
-                          content: Text(
-                            'Please select property!',
-                          ),
-                        ),
-                      );
+                          duration: const Duration(seconds: 1),
+                          snackPosition: SnackPosition.BOTTOM);
                     }
                   },
                 ),

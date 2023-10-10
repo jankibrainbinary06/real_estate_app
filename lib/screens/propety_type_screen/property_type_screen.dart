@@ -67,9 +67,10 @@ class PropertyTypeScreen extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.71,
+                                    childAspectRatio:
+                                        Get.height > 650 ? 0.71 : 0.77,
                                     crossAxisSpacing: 15,
                                     mainAxisSpacing: 20),
                             itemCount:
