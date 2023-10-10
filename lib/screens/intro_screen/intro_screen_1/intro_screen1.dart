@@ -19,6 +19,7 @@ class IntroScreen1 extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
+          scrolledUnderElevation: 0,
           systemOverlayStyle: const SystemUiOverlayStyle(
               statusBarColor: Colors.transparent,
               statusBarIconBrightness: Brightness.dark),
