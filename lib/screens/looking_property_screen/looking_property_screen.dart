@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/commons/text_style.dart';
@@ -64,7 +62,7 @@ class LookingPropertyScreen extends StatelessWidget {
                                   color: ColorRes.black.withOpacity(0.15),
                                   blurRadius: 2.6,
                                   spreadRadius: -1,
-                                  offset: Offset(4, 4))
+                                  offset: const Offset(4, 4))
                             ],
                             border: Border.all(
                                 color: ColorRes.colorD8DAEC, width: 0.2),
@@ -122,7 +120,7 @@ class LookingPropertyScreen extends StatelessWidget {
                                   color: ColorRes.black.withOpacity(0.15),
                                   blurRadius: 2.6,
                                   spreadRadius: -1,
-                                  offset: Offset(4, 4))
+                                  offset: const Offset(4, 4))
                             ],
                             border: Border.all(
                                 color: ColorRes.colorD8DAEC, width: 0.2),

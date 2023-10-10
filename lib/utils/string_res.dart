@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class StringRes {
   //==intro 1===
   static const findYourDreamHome = 'Find your dream home';
@@ -113,4 +115,24 @@ class StringRes {
   static const forgetPass = 'Forgot Password ?';
   static const doNntHaveAnAccount = 'Don’t have an account?';
   static const signUp = ' Sign Up';
+
+  ///=== sign up screen==
+  static const helloSignup = 'Hello! Signup to get Started';
+  static const enterUserName = 'Enter user Name';
+  static const enterConfirmPass = 'Enter Confirm Password';
+
+  ///=== forgot password screen===
+  static const enterYourEmailToReset =
+      'Enter your email id to reset your password';
+  static const continueX = 'Continue';
+
+  ///=== reset password screen===
+  static const enterYouNewPass = 'Enter your new password';
+
+  ///===verification screen===
+  static const typeTheVerification =
+      "Type the verification code we’ve sent you";
+  static const didNotReceive = 'Didn’t receive code?';
+  static const resendOtp = "Resend OTP";
+  static const verification = "Verification";
 }

@@ -107,7 +107,7 @@ class BudgetScreen extends StatelessWidget {
                 ),
                 CommonButton(
                   onTap: () {
-                    Get.to(() => DashBoardScreen());
+                    Get.to(() => const DashBoardScreen());
                   },
                 ),
               ],

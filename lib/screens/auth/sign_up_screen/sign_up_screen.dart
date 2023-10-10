@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:real_estate_app/commons/common_button.dart';
-import 'package:real_estate_app/commons/text_style.dart';
-
-import 'package:real_estate_app/screens/auth/login_screen/login_controller.dart';
-import 'package:real_estate_app/screens/auth/sign_up_screen/sign_up_screen.dart';
-import 'package:real_estate_app/utils/color_res.dart';
-
+import 'package:real_estate_app/screens/auth/login_screen/login_screen.dart';
+import 'package:real_estate_app/screens/auth/sign_up_screen/signup_controller.dart';
+import '../../../commons/common_button.dart';
 import '../../../commons/common_text_field.dart';
+import '../../../commons/text_style.dart';
 import '../../../utils/asset_res.dart';
+import '../../../utils/color_res.dart';
 import '../../../utils/string_res.dart';
-import '../forgot_pass_screen/forgot_password_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
-  final LoginController loginController = Get.put(LoginController());
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({Key? key}) : super(key: key);
+  final SignUpController signUpController = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: GetBuilder<LoginController>(
-        id: 'login',
+          child: GetBuilder<SignUpController>(
+        id: 'signup',
         builder: (controller) {
           return SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -41,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      StringRes.signIn,
+                      StringRes.signUp,
                       style: lato20700.copyWith(
                           fontSize: 42,
                           color: ColorRes.appColor,
@@ -53,21 +50,22 @@ class LoginScreen extends StatelessWidget {
                   height: Get.height * 0.03,
                 ),
                 Text(
-                  StringRes.helloAgain,
+                  StringRes.helloSignup,
                   style: lato14400.copyWith(
                     fontSize: 22,
                     color: ColorRes.color292929,
                   ),
                 ),
                 SizedBox(
-                  height: Get.height * 0.08,
+                  height: Get.height * 0.05,
                 ),
                 CommonTextField(
-                    textEditingController: loginController.emailController,
-                    hintText: StringRes.enterEmail),
-                loginController.emailError != ''
+                    textEditingController: signUpController.userController,
+                    hintText: StringRes.enterUserName,
+                    imagePrefix: AssetRes.userFilled),
+                signUpController.userError != ''
                     ? Text(
-                        loginController.emailError,
+                        signUpController.userError,
                         style: const TextStyle(color: Colors.red),
                       )
                     : const SizedBox(),
@@ -75,48 +73,63 @@ class LoginScreen extends StatelessWidget {
                   height: 20,
                 ),
                 CommonTextField(
-                  textEditingController: loginController.passwordController,
-                  hintText: StringRes.enterPass,
-                  imagePrefix: AssetRes.lock,
-                  isEye: true,
-                  isObSecure: loginController.obSecure,
-                  onTapEye: () {
-                    if (loginController.obSecure) {
-                      loginController.obSecure = false;
-                    } else {
-                      loginController.obSecure = true;
-                    }
-                    loginController.update(['login']);
-                  },
-                ),
-                loginController.passError != ''
+                    textEditingController: signUpController.emailController,
+                    hintText: StringRes.enterEmail),
+                signUpController.emailError != ''
                     ? Text(
-                        loginController.passError,
+                        signUpController.emailError,
                         style: const TextStyle(color: Colors.red),
                       )
                     : const SizedBox(),
                 const SizedBox(
-                  height: 6,
+                  height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Get.to(() => ForgotPasswordScreen());
-                        loginController.emailError = '';
-                        loginController.passError = '';
-                        loginController.emailController.clear();
-                        loginController.passwordController.clear();
-                        loginController.update(['login']);
-                      },
-                      child: Text(
-                        StringRes.forgetPass,
-                        style: poppins14400,
-                      ),
-                    ),
-                  ],
+                CommonTextField(
+                  textEditingController: signUpController.passwordController,
+                  hintText: StringRes.enterPass,
+                  imagePrefix: AssetRes.lock,
+                  isEye: true,
+                  isObSecure: signUpController.obSecure,
+                  onTapEye: () {
+                    if (signUpController.obSecure) {
+                      signUpController.obSecure = false;
+                    } else {
+                      signUpController.obSecure = true;
+                    }
+                    signUpController.update(['signup']);
+                  },
                 ),
+                signUpController.passError != ''
+                    ? Text(
+                        signUpController.passError,
+                        style: const TextStyle(color: Colors.red),
+                      )
+                    : const SizedBox(),
+                const SizedBox(
+                  height: 20,
+                ),
+                CommonTextField(
+                  textEditingController:
+                      signUpController.confirmPasswordController,
+                  hintText: StringRes.enterConfirmPass,
+                  imagePrefix: AssetRes.lock,
+                  isEye: true,
+                  isObSecure: signUpController.obSecureC,
+                  onTapEye: () {
+                    if (signUpController.obSecureC) {
+                      signUpController.obSecureC = false;
+                    } else {
+                      signUpController.obSecureC = true;
+                    }
+                    signUpController.update(['signup']);
+                  },
+                ),
+                signUpController.confirmPassError != ''
+                    ? Text(
+                        signUpController.confirmPassError,
+                        style: const TextStyle(color: Colors.red),
+                      )
+                    : const SizedBox(),
                 SizedBox(
                   height: Get.height * 0.08,
                 ),
@@ -125,9 +138,9 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     CommonButton(
                       onTap: () {
-                        loginController.onTapLogin();
+                        signUpController.onTapSinUp();
                       },
-                      title: StringRes.signIn,
+                      title: StringRes.signUp,
                     ),
                     SizedBox(
                       height: Get.height * 0.08,
@@ -143,15 +156,18 @@ class LoginScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => SignUpScreen());
-                            loginController.emailError = '';
-                            loginController.passError = '';
-                            loginController.emailController.clear();
-                            loginController.passwordController.clear();
-                            loginController.update(['login']);
+                            Get.to(() => LoginScreen());
+                            signUpController.emailController.clear();
+                            signUpController.userController.clear();
+                            signUpController.passwordController.clear();
+                            signUpController.confirmPasswordController.clear();
+                            signUpController.emailError = '';
+                            signUpController.passError = '';
+                            signUpController.userError = '';
+                            signUpController.confirmPassError = '';
                           },
                           child: Text(
-                            StringRes.signUp,
+                            StringRes.signIn,
                             style: poppins14400,
                           ),
                         ),
@@ -160,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 100,
                 ),
               ],
             ),

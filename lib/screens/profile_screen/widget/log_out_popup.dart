@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate_app/commons/text_style.dart';
+import 'package:real_estate_app/screens/auth/login_screen/login_screen.dart';
 
 import '../../../utils/asset_res.dart';
 import '../../../utils/color_res.dart';
@@ -66,6 +67,7 @@ openScreen(BuildContext context, {int? index}) {
                       child: GestureDetector(
                         onTap: () {
                           Get.back();
+                          Get.to(() => LoginScreen());
                         },
                         child: Container(
                           alignment: Alignment.center,

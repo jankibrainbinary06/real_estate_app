@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:real_estate_app/commons/common_button.dart';
+
 import 'package:real_estate_app/commons/text_style.dart';
 import 'package:real_estate_app/screens/favourites_screen/favourites_controller.dart';
 import 'package:real_estate_app/screens/home_screen/home_controller.dart';
-import 'package:real_estate_app/screens/property_datails_screen/property_datails_controller.dart';
+
 import 'package:real_estate_app/utils/color_res.dart';
 import 'package:real_estate_app/utils/string_res.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../utils/asset_res.dart';
 
@@ -19,6 +18,7 @@ class FavouritesScreen extends StatelessWidget {
   final HomeController homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
+    debugPrint('${Get.height}');
     return Scaffold(
       backgroundColor: ColorRes.white,
       body: SafeArea(
@@ -120,7 +120,7 @@ class FavouritesScreen extends StatelessWidget {
                                   Container(
                                     width: Get.width * 0.9,
                                     margin: const EdgeInsets.only(bottom: 10),
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
                                           10,
@@ -137,12 +137,12 @@ class FavouritesScreen extends StatelessWidget {
                                               ),
                                               blurRadius: 3,
                                               spreadRadius: -1,
-                                              offset: Offset(4, 4)),
+                                              offset: const Offset(4, 4)),
                                         ]),
                                     child: Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.all(8),
+                                          padding: const EdgeInsets.all(8),
                                           height: Get.height * 0.22,
                                           width: Get.height * 0.2,
                                           decoration: BoxDecoration(
@@ -165,7 +165,8 @@ class FavouritesScreen extends StatelessWidget {
                                                 child: Container(
                                                     height: 25,
                                                     width: 25,
-                                                    decoration: BoxDecoration(
+                                                    decoration:
+                                                        const BoxDecoration(
                                                       color: ColorRes.white,
                                                       shape: BoxShape.circle,
                                                     ),
@@ -179,7 +180,7 @@ class FavouritesScreen extends StatelessWidget {
                                                       .onTapFeatured(index);
                                                 },
                                               ),
-                                              Spacer(),
+                                              const Spacer(),
                                               Container(
                                                 padding:
                                                     const EdgeInsets.symmetric(
@@ -206,7 +207,7 @@ class FavouritesScreen extends StatelessWidget {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 12,
                                         ),
                                         Padding(
@@ -250,7 +251,7 @@ class FavouritesScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
                                               Row(
@@ -269,7 +270,7 @@ class FavouritesScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
                                               Row(
@@ -302,7 +303,7 @@ class FavouritesScreen extends StatelessWidget {
                                   Positioned(
                                     bottom: 10,
                                     child: Container(
-                                      padding: EdgeInsets.all(6),
+                                      padding: const EdgeInsets.all(6),
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -320,7 +321,7 @@ class FavouritesScreen extends StatelessWidget {
                               );
                             },
                             separatorBuilder: (context, index) {
-                              return SizedBox(
+                              return const SizedBox(
                                 width: 20,
                               );
                             },
@@ -329,7 +330,7 @@ class FavouritesScreen extends StatelessWidget {
                         )
                       : Expanded(
                           child: GridView.builder(
-                            physics: AlwaysScrollableScrollPhysics(),
+                            physics: const AlwaysScrollableScrollPhysics(),
                             //shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return Container(
@@ -352,19 +353,19 @@ class FavouritesScreen extends StatelessWidget {
                                           ),
                                           blurRadius: 3,
                                           spreadRadius: -1,
-                                          offset: Offset(4, 4)),
+                                          offset: const Offset(4, 4)),
                                     ]),
                                 child: Column(
                                   children: [
-                                    Expanded(
+                                    const Expanded(
                                       child: SizedBox(
                                         height: 8,
                                       ),
                                     ),
                                     Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 8),
-                                      padding: EdgeInsets.all(8),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      padding: const EdgeInsets.all(8),
                                       height: Get.height * 0.24,
                                       width: Get.height * 0.24,
                                       decoration: BoxDecoration(
@@ -373,7 +374,7 @@ class FavouritesScreen extends StatelessWidget {
                                           border: Border.all(
                                               color: ColorRes.appColor,
                                               width: 1),
-                                          image: DecorationImage(
+                                          image: const DecorationImage(
                                             image: AssetImage(
                                               AssetRes.introHome2,
                                             ),
@@ -387,7 +388,7 @@ class FavouritesScreen extends StatelessWidget {
                                             child: Container(
                                                 height: 25,
                                                 width: 25,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: ColorRes.white,
                                                   shape: BoxShape.circle,
                                                 ),
@@ -400,7 +401,7 @@ class FavouritesScreen extends StatelessWidget {
                                               homeController.onTapNearBY(index);
                                             },
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.end,
@@ -451,7 +452,7 @@ class FavouritesScreen extends StatelessWidget {
                                     ),
                                     Row(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 8,
                                         ),
                                         SizedBox(
@@ -464,9 +465,9 @@ class FavouritesScreen extends StatelessWidget {
                                                 fontSize: 13),
                                           ),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Container(
-                                          padding: EdgeInsets.all(3),
+                                          padding: const EdgeInsets.all(3),
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(2),
@@ -482,15 +483,15 @@ class FavouritesScreen extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     Row(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        Icon(
+                                        const Icon(
                                           Icons.star_sharp,
                                           color: ColorRes.colorFFC42D,
                                           size: 15,
@@ -502,7 +503,7 @@ class FavouritesScreen extends StatelessWidget {
                                               color: ColorRes.color6D718B,
                                               fontWeight: FontWeight.w600),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         Image.asset(
@@ -510,7 +511,7 @@ class FavouritesScreen extends StatelessWidget {
                                           height: 10,
                                           width: 10,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 2,
                                         ),
                                         Text(
@@ -521,7 +522,7 @@ class FavouritesScreen extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                   ],
@@ -530,10 +531,10 @@ class FavouritesScreen extends StatelessWidget {
                             },
                             itemCount: 4,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
                                     crossAxisSpacing: 15,
-                                    childAspectRatio: 0.66,
+                                    childAspectRatio: 0.61,
                                     mainAxisSpacing: 15),
                           ),
                         ),

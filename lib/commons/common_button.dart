@@ -15,14 +15,17 @@ class CommonButton extends StatelessWidget {
   final double? height;
   final bool? isShowIcon;
 
-  const CommonButton(
-      {super.key,
-      this.title,
-      required this.onTap,
-      this.borderRadius,
-      this.color,
-      this.height,
-      this.width, this.isShowIcon, this.image,});
+  const CommonButton({
+    super.key,
+    this.title,
+    required this.onTap,
+    this.borderRadius,
+    this.color,
+    this.height,
+    this.width,
+    this.isShowIcon,
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +38,20 @@ class CommonButton extends StatelessWidget {
           color: ColorRes.appColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            isShowIcon==true?Image.asset(
-              image ?? "",
-              height: 20,
-              width: 20,
-              fit: BoxFit.fitHeight,
-            ):SizedBox(),
-            SizedBox(width: 7,),
+            isShowIcon == true
+                ? Image.asset(
+                    image ?? "",
+                    height: 20,
+                    width: 20,
+                    fit: BoxFit.fitHeight,
+                  )
+                : const SizedBox(),
+            const SizedBox(
+              width: 7,
+            ),
             Text(
               title ?? StringRes.next,
               style: lato20700,

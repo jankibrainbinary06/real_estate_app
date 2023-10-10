@@ -20,7 +20,7 @@ class IntroScreen1 extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           systemOverlayStyle: const SystemUiOverlayStyle(
-              statusBarColor: Colors.white,
+              statusBarColor: Colors.transparent,
               statusBarIconBrightness: Brightness.dark),
           toolbarHeight: 0,
         ),

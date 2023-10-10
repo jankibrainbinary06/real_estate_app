@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:real_estate_app/screens/auth/login_screen/login_screen.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 import '../../utils/string_res.dart';
@@ -30,6 +31,7 @@ class HomeController extends GetxController {
     } else {
       featuredBoolList[index] = true;
     }
+    Get.to(() => LoginScreen());
     update(['home']);
     update(['favourites']);
   }
@@ -40,6 +42,7 @@ class HomeController extends GetxController {
     } else {
       nearByBoolLIst[index] = true;
     }
+    Get.to(() => LoginScreen());
     update(['home']);
   }
 

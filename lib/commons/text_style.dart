@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import '../utils/color_res.dart';
@@ -44,4 +46,10 @@ TextStyle openSans14600 = TextStyle(
   fontSize: 14,
   fontFamily: FontRes.openSansSemiBold,
   fontWeight: FontWeight.w600,
+);
+TextStyle poppins14400 = const TextStyle(
+  color: ColorRes.appColor,
+  fontSize: 14,
+  fontFamily: FontRes.poppinsRegular,
+  fontWeight: FontWeight.w400,
 );

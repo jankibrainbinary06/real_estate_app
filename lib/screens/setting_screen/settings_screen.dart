@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:real_estate_app/screens/auth/forgot_pass_screen/forgot_password_screen.dart';
 import 'package:real_estate_app/screens/setting_screen/setting_controller.dart';
 
 import '../../commons/text_style.dart';
@@ -85,26 +86,31 @@ class SettingScreen extends StatelessWidget {
                 SizedBox(
                   height: Get.height * 0.035,
                 ),
-                Row(
-                  children: [
-                    Image.asset(
-                      AssetRes.forgetPass,
-                      scale: 4,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      StringRes.forgetPassword,
-                      style: lato14400.copyWith(
-                          fontSize: 18, color: ColorRes.appColor),
-                    ),
-                    const Spacer(),
-                    Image.asset(
-                      AssetRes.arrowNext,
-                      scale: 4,
-                    ),
-                  ],
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => ForgotPasswordScreen());
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        AssetRes.forgetPass,
+                        scale: 4,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        StringRes.forgetPassword,
+                        style: lato14400.copyWith(
+                            fontSize: 18, color: ColorRes.appColor),
+                      ),
+                      const Spacer(),
+                      Image.asset(
+                        AssetRes.arrowNext,
+                        scale: 4,
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: Get.height * 0.035,

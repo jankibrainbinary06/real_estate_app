@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:real_estate_app/commons/common_button.dart';
+
 import 'package:real_estate_app/commons/text_style.dart';
-import 'package:real_estate_app/screens/favourites_screen/favourites_controller.dart';
-import 'package:real_estate_app/screens/home_screen/home_controller.dart';
-import 'package:real_estate_app/screens/property_datails_screen/property_datails_controller.dart';
+
 import 'package:real_estate_app/screens/reviews_screen/add_reviews_screen.dart';
 import 'package:real_estate_app/screens/reviews_screen/reviews_controller.dart';
 import 'package:real_estate_app/utils/color_res.dart';
 import 'package:real_estate_app/utils/string_res.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../utils/asset_res.dart';
 
@@ -79,7 +76,7 @@ class ReviewsScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star_sharp,
                                 color: ColorRes.colorFFC42D,
                                 size: 16,
@@ -114,7 +111,7 @@ class ReviewsScreen extends StatelessWidget {
                                   width: 18,
                                   fit: BoxFit.fitHeight,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 4,
                                 ),
                                 Text(
@@ -127,7 +124,7 @@ class ReviewsScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Expanded(
@@ -146,15 +143,15 @@ class ReviewsScreen extends StatelessWidget {
                                   ),
                                   blurRadius: 1.95,
                                   spreadRadius: -1,
-                                  offset: Offset(4.59, 2)),
+                                  offset: const Offset(4.59, 2)),
                             ]),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 12),
                           child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                CircleAvatar(
+                                const CircleAvatar(
                                   backgroundImage: AssetImage(AssetRes.User),
                                 ),
                                 Padding(
@@ -186,7 +183,8 @@ class ReviewsScreen extends StatelessWidget {
                                             allowHalfRating: true,
                                             glow: false,
                                             itemSize: 16.0,
-                                            itemBuilder: (context, _) => Icon(
+                                            itemBuilder: (context, _) =>
+                                                const Icon(
                                               Icons.star,
                                               color: ColorRes.colorFFC42D,
                                             ),
@@ -194,7 +192,7 @@ class ReviewsScreen extends StatelessWidget {
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       SizedBox(
@@ -221,12 +219,12 @@ class ReviewsScreen extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(
+                      return const SizedBox(
                         height: 20,
                       );
                     },
                   )),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                 ],

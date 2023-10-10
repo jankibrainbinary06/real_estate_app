@@ -7,4 +7,6 @@ class FontRes {
   static const mulishBold = 'Mulish-Bold';
 
   static const openSansSemiBold = 'open-sans-semibold';
+
+  static const poppinsRegular = 'poppin-regular';
 }

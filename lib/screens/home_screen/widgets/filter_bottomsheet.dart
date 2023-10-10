@@ -71,7 +71,7 @@ showFilterBottomSheet(BuildContext context) {
                             height: Get.height * 0.07,
                             child: ListView.separated(
                               separatorBuilder: (context, index) {
-                                return SizedBox(
+                                return const SizedBox(
                                   width: 18,
                                 );
                               },
@@ -87,7 +87,7 @@ showFilterBottomSheet(BuildContext context) {
                                   },
                                   child: Container(
                                       margin: const EdgeInsets.only(bottom: 10),
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 40, vertical: 6),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
@@ -179,7 +179,7 @@ showFilterBottomSheet(BuildContext context) {
                             height: Get.height * 0.07,
                             child: ListView.separated(
                               separatorBuilder: (context, index) {
-                                return SizedBox(
+                                return const SizedBox(
                                   width: 18,
                                 );
                               },
@@ -195,7 +195,7 @@ showFilterBottomSheet(BuildContext context) {
                                   },
                                   child: Container(
                                       margin: const EdgeInsets.only(bottom: 10),
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 40, vertical: 6),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
@@ -240,7 +240,7 @@ showFilterBottomSheet(BuildContext context) {
                             height: Get.height * 0.05,
                             child: ListView.separated(
                               separatorBuilder: (context, index) {
-                                return SizedBox(
+                                return const SizedBox(
                                   width: 15,
                                 );
                               },
@@ -257,8 +257,8 @@ showFilterBottomSheet(BuildContext context) {
                                   child: Container(
                                       width: 40,
                                       margin: const EdgeInsets.only(bottom: 5),
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 3),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 3),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(
                                           5,
@@ -277,7 +277,7 @@ showFilterBottomSheet(BuildContext context) {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.star_sharp,
                                             color: ColorRes.colorFFC42D,
                                             size: 15,
@@ -332,7 +332,7 @@ showFilterBottomSheet(BuildContext context) {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 13,
                               ),
                               Expanded(

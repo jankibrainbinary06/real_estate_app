@@ -14,12 +14,14 @@ class ChatController extends GetxController {
   PlatformFile? imageFile;
   Future<void> pickFile() async {
     try {
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
+      await FilePicker.platform.pickFiles(
         type: FileType.custom,
         allowMultiple: true,
         allowedExtensions: ['jpg', 'png', 'webp', 'jpeg', 'pdf', 'mp4'],
       );
-    } catch (e) {}
+    } catch (e) {
+      debugPrint('hy');
+    }
   }
 
   onBackspacePressed() {

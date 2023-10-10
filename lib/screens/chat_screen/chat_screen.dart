@@ -261,7 +261,7 @@ class ChatScreen extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 final ImagePicker picker = ImagePicker();
-                                final image = await picker.pickImage(
+                                await picker.pickImage(
                                     source: ImageSource.camera);
                               },
                               child: Image.asset(

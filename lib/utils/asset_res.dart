@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class AssetRes {
   static const images = 'assets/images/';
   static const icons = 'assets/icons/';
@@ -32,6 +34,8 @@ class AssetRes {
   static const arrowNext = '${icons}arrow_next.png';
   static const forgetPass = '${icons}forget_pass.png';
   static const eyeClose = '${icons}eye_close.png';
+  static const eyeOpen = '${icons}eye_open.png';
+  static const lock = '${icons}lock.png';
   static const notification2 = '${icons}notification_2.png';
 
   //====images====

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:real_estate_app/screens/budget_screen/budget_controller.dart';
 import 'package:real_estate_app/screens/budget_screen/budget_screen.dart';
 
 import '../../utils/string_res.dart';

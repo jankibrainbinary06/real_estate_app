@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:get/get.dart';
 import 'package:real_estate_app/screens/pre_splash_screen/pre_splash_controller.dart';
 

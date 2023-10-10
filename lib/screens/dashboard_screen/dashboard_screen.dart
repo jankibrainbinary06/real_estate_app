@@ -7,7 +7,6 @@ import 'package:real_estate_app/screens/home_screen/home_screen.dart';
 import 'package:real_estate_app/screens/intro_screen/intro_screen_1/intro_screen1.dart';
 import 'package:real_estate_app/screens/messages_screen/messages_screen.dart';
 import 'package:real_estate_app/screens/profile_screen/profile_screen.dart';
-import 'package:real_estate_app/screens/reviews_screen/reviews_screen.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({Key? key}) : super(key: key);

@@ -25,7 +25,7 @@ showLocationBottomSheet(BuildContext context) {
               return Container(
                 height: Get.height * 0.68,
                 width: Get.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(
                           50,
@@ -47,7 +47,7 @@ showLocationBottomSheet(BuildContext context) {
                                 style: lato20700.copyWith(
                                     fontSize: 22, color: ColorRes.appColor),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               CommonButton(
                                 onTap: () {},
                                 title: StringRes.edit,
@@ -80,7 +80,7 @@ showLocationBottomSheet(BuildContext context) {
                                   child: Container(
                                       width: Get.width,
                                       margin: const EdgeInsets.only(bottom: 10),
-                                      padding: EdgeInsets.all(15),
+                                      padding: const EdgeInsets.all(15),
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(
                                             10,
@@ -101,7 +101,7 @@ showLocationBottomSheet(BuildContext context) {
                                                 ),
                                                 blurRadius: 3,
                                                 spreadRadius: -1,
-                                                offset: Offset(4, 4)),
+                                                offset: const Offset(4, 4)),
                                           ]),
                                       child: Row(
                                         children: [
@@ -123,7 +123,7 @@ showLocationBottomSheet(BuildContext context) {
                                               scale: 4,
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 15,
                                           ),
                                           Expanded(

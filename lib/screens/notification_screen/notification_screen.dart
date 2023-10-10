@@ -16,6 +16,7 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorRes.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         centerTitle: true,
         title: Text(

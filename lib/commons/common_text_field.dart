@@ -8,6 +8,7 @@ class CommonTextField extends StatelessWidget {
   final String? hintText;
   final String? imagePrefix;
   final bool? isObSecure;
+  final bool? isEye;
   final ValueChanged<String>? onChanged;
 
   final VoidCallback? onTapEye;
@@ -21,7 +22,8 @@ class CommonTextField extends StatelessWidget {
       required this.textEditingController,
       this.onChanged,
       this.onTapEye,
-      this.onTapTextField})
+      this.onTapTextField,
+      this.isEye})
       : super(key: key);
 
   @override
@@ -42,7 +44,9 @@ class CommonTextField extends StatelessWidget {
           ),
           Image.asset(
             imagePrefix ?? AssetRes.email,
-            scale: 4.5,
+            height: 20,
+            width: 22,
+            color: ColorRes.appColor,
           ),
           const SizedBox(
             width: 10,
@@ -68,13 +72,15 @@ class CommonTextField extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          GestureDetector(
-            onTap: onTapEye ?? () {},
-            child: Image.asset(
-              AssetRes.eyeClose,
-              scale: 3,
-            ),
-          ),
+          isEye == true
+              ? GestureDetector(
+                  onTap: onTapEye ?? () {},
+                  child: Image.asset(
+                    isObSecure == true ? AssetRes.eyeClose : AssetRes.eyeOpen,
+                    scale: 3,
+                  ),
+                )
+              : const SizedBox(),
           const SizedBox(
             width: 16,
           ),
